@@ -3,7 +3,7 @@
 
 ###Description###
 
-A fantasy themed strategic turn based battle game with a wide range of classes and difficulties.
+Sometimes you need to talk to Nick but he's away! Fortunately he uploaded his brain to a computer so you can talk to him whenever!
 
 ###NickChat Changelog###
 - Version 1: Added greeting detection and unknown handling
