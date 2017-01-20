@@ -1,0 +1,20 @@
+!-- Agenda --!
+
+!-- Bugs --!
+ - CSS: Fix Message Input Location
+
+!-- Process --!         
+ - Recieve user message
+ - Convert message to computer readable sentence
+ 
+ Option 1:
+ - Create computer response
+ - Convert computer response to readable message
+ - (More complicated but will be able to expand more)
+ 
+ Option 2:
+ - Use sample responses
+ - (More basic but will achieve more readability)
+ 
+ !-- Notes --!
+ -It can identify exactly 90 words. Some of which include congenial, super-eminent, bonjour, hi-ya & bulkiest. Yes that is correct. It understands those words.
