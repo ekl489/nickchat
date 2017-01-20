@@ -1,36 +1,27 @@
+/* --- Wrapper --- */
+#wrapper{
+    margin:20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row{
+    text-align: center;
+}
+/* --- Header --- */
 .header{
     text-align: center;
-    margin: 20px;
-    height: 25vh; 
-}
-
-.content{
-   margin: 20px;
+    height: 100; 
 }
 
 /* --- Log --- */
 
 .log{
-    width: 50%;
-    margin: 0 auto;
-
-    height: 40vh; 
-    padding: 0px;
-    overflow: auto;
+    max-height: 40vh;
+    min-height: 40vh;
 }
 
 /* --- Form --- */
 
-.form{
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    bottom: 0px;
-}
-.form .row{
-
-
-}
 .form textarea{
     height: 100%;
     resize: none;

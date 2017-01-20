@@ -18,37 +18,44 @@
         <script src="js/script.js"></script>
     </head>
     <body>
-        <header>
+        <div id="wrapper" class="container">
+            <div class="row">
+                <header>
             <div class="header">
                 <h1>NickChat</h1>
                 Sometimes you need to talk to Nick but he's away! Fortunately he uploaded his brain to a computer so you can talk to him whenever!<br><br>
                 <button class="button-primary" src="https://github.com/ekl489/nickchat">GitHub</button>
             </div>
         </header>
-
-            <hr><!-- Horizontal Split -->
-
-        <main>
-            <div class="content">
+            </div>
+            <hr>
+            <div class="row">
                 <!-- Older Messages -->
                 <div class="log" id="log">
                     <table id="logTable">
                         <!-- Dynamically added -->
                     </table>
                 </div>
-
+            </div>
+            <hr>
+            <div class="row">
                 <!-- Form -->
                 <div class="form">
                     <div class="row">
-                        <div class="nine columns">
+                        <div class="ten columns">
                             <textarea class="u-full-width" placeholder="Hello!" id="messageBox"></textarea>
                         </div>
-                        <div class="three columns">
+                        <div class="two columns">
                             <button onkeypress="checkKeyPress()" class="button-primary" onclick="sayThis()">Say This</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+            <div class="row">
+                Created by Nicholas Ramsay
+            </div>
+        </div>
+        
+        <hr><!-- Horizontal Split -->
     </body>
 </html>
