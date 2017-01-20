@@ -1,20 +1,25 @@
 //script.js
 
+$(document).ready(function(){
+    
+});
+
 var Message = "";
 var Response = "";
 var MessageSplit = [];
 var Identifiers = [];
+var textAnimationCount = 0;
 
 function sayThis() {
     //Disable Text area
     document.getElementById("messageBox").disabled = true;
-    
+
     //Reset Variables
     var Message = "";
     var Response = "";
     var MessageSplit = [];
     var Identifiers = [];
-    
+
     //Get User Message
     Message = document.getElementById("messageBox").value.toLowerCase();
 
@@ -24,7 +29,7 @@ function sayThis() {
     if(Message != ""){
 
         //Add Message to table 
-        document.getElementById("logTable").innerHTML = document.getElementById("logTable").innerHTML + "<tr><td><b>You:</b></td><td>"+ Message +"</td><tr>";
+        printMessage("You", Message);
         document.getElementById("messageBox").value = "";
         log.scrollTop = log.scrollHeight;
 
@@ -32,21 +37,12 @@ function sayThis() {
         var analysedMessage;
         MessageSplit = Message.split(' ');
         console.log("Initial MessageSplit: " + MessageSplit);
-    
+
         //Identify Words
-        for(x = 0; x < MessageSplit.length; x++){ //Loop through each word
-            //Clear Junk
-            MessageSplit[x].replace(',', '');
-            MessageSplit[x].replace('.', '');
-            MessageSplit[x].replace('?', '');
-            MessageSplit[x].replace(';', '');
-            MessageSplit[x].replace('\"', '');
-            MessageSplit[x].replace('\'', '');
-            MessageSplit[x].replace('!', '');
-                                    
+        for(x = 0; x < MessageSplit.length; x++){ //Loop through each word                  
             //Clear Identifiers
             Identifiers.push(":");
-            
+
             //Identify Words
             if(MessageSplit[x].includes('hello') || MessageSplit[x].includes('hi') || MessageSplit[x].includes('hey') || MessageSplit[x].includes('bonjour') || MessageSplit[x].includes('howdy') || MessageSplit[x].includes('greetings') || MessageSplit[x].includes('welcome') || MessageSplit[x].includes('hi-ya')){
                 Identifiers[x] = Identifiers[x] + "|greeting";
@@ -73,23 +69,36 @@ function sayThis() {
 
             console.log("Identifiers: " + Identifiers[x] + "\n MessageSplit: " + MessageSplit);
         }  
-        
+
         //Check if understandable
         if(!analysedMessage){
             Response = "I'm sorry, I don't understand.";
             analysedMessage = true;
         }
-        
+
         //Print Message
         setTimeout(function(){
                 printMessage("Nick", Response);
                 document.getElementById("messageBox").disabled = false;
-            },Math.floor((Math.random() * 3000) + 2000));
+                document.getElementById("messageBox").select();
+            },Math.floor((Math.random() * 1000) + 1000));
         log.scrollTop = log.scrollHeight;
     }
     console.log(Identifiers);
 }
 
 function printMessage(author, message){
-     document.getElementById("logTable").innerHTML = document.getElementById("logTable").innerHTML + "<tr><td><b>" + author + ":</b></td><td>"+ message +"</td><tr>";
+    textAnimationCount++;
+    document.getElementById("logTable").innerHTML = document.getElementById("logTable").innerHTML + "<tr id='logRow" + textAnimationCount.toString() + "'><td><b>" + author + ":</b></td><td>"+ message +"</td><tr>";
+    $('#logRow' + textAnimationCount.toString())
+    $('#logRow' + textAnimationCount.toString()).hide();
+    $('#logRow' + textAnimationCount.toString()).stop().fadeIn(500);
+    $('#logRow' + textAnimationCount.toString()).show();
+    log.scrollTop = log.scrollHeight;
 }
+
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+        sayThis();
+    }
+});

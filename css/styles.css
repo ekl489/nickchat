@@ -1,6 +1,7 @@
 .header{
     text-align: center;
     margin: 20px;
+    height: 25vh; 
 }
 
 .content{
@@ -13,7 +14,7 @@
     width: 50%;
     margin: 0 auto;
 
-    height: 700px;
+    height: 40vh; 
     padding: 0px;
     overflow: auto;
 }
@@ -21,8 +22,10 @@
 /* --- Form --- */
 
 .form{
-    width: 50%;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 0px;
 }
 .form .row{
 
