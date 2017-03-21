@@ -44,6 +44,15 @@ function sayThis() {
             Identifiers.push(":");
 
             //Identify Words
+            if(MessageSplit[x].includes('is') || MessageSplit[x].includes('abide') || MessageSplit[x].includes('continue') || MessageSplit[x].includes('do')){
+                Identifiers[x] = Identifiers[x] + "|is";
+            }
+            if(MessageSplit[x].includes('me') || MessageSplit[x].includes('my') || MessageSplit[x].includes('myself') || MessageSplit[x].includes('I') || MessageSplit[x].includes('mine')){
+                Identifiers[x] = Identifiers[x] + "|my";
+            }
+            if(MessageSplit[x].includes('name') || MessageSplit[x].includes('brand') || MessageSplit[x].includes('alias') || MessageSplit[x].includes('label') || MessageSplit[x].includes('brand')){
+                Identifiers[x] = Identifiers[x] + "|name";
+            }
             if(MessageSplit[x].includes('hello') || MessageSplit[x].includes('hi') || MessageSplit[x].includes('hey') || MessageSplit[x].includes('bonjour') || MessageSplit[x].includes('howdy') || MessageSplit[x].includes('greetings') || MessageSplit[x].includes('welcome') || MessageSplit[x].includes('hi-ya')){
                 Identifiers[x] = Identifiers[x] + "|greeting";
             }
@@ -80,7 +89,7 @@ function sayThis() {
             if(MessageSplit[x].includes('beautiful') || MessageSplit[x].includes('alluring') || MessageSplit[x].includes('appealing') || MessageSplit[x].includes('charming') || MessageSplit[x].includes('cute') || MessageSplit[x].includes('dazzling') || MessageSplit[x].includes('delicate') || MessageSplit[x].includes('delightful') || MessageSplit[x].includes('elegant') || MessageSplit[x].includes('exquisite') || MessageSplit[x].includes('find') || MessageSplit[x].includes('good-looking') || MessageSplit[x].includes('gorgeous') || MessageSplit[x].includes('graceful') || MessageSplit[x].includes('grand')  || MessageSplit[x].includes('handsome') || MessageSplit[x].includes('lovely') || MessageSplit[x].includes('magnificent') || MessageSplit[x].includes('stunning') || MessageSplit[x].includes('pretty')  || MessageSplit[x].includes('angelic')){
                 Identifiers[x] = Identifiers[x] + "|beautiful";
             }
-            if(MessageSplit[x].includes('belief') || MessageSplit[x].includes('acceptance') || MessageSplit[x].includes('faith') || MessageSplit[x].includes('feeling') || MessageSplit[x].includes('idea') || MessageSplit[x].includes('opinion') || MessageSplit[x].includes('position') || MessageSplit[x].includes('view') || MessageSplit[x].includes('judgment') || MessageSplit[x].includes('theory') || MessageSplit[x].includes('thinking') || MessageSplit[x].includes('trust') || MessageSplit[x].includes('understanding'){
+            if(MessageSplit[x].includes('belief') || MessageSplit[x].includes('acceptance') || MessageSplit[x].includes('faith') || MessageSplit[x].includes('feeling') || MessageSplit[x].includes('idea') || MessageSplit[x].includes('opinion') || MessageSplit[x].includes('position') || MessageSplit[x].includes('view') || MessageSplit[x].includes('judgment') || MessageSplit[x].includes('theory') || MessageSplit[x].includes('thinking') || MessageSplit[x].includes('trust') || MessageSplit[x].includes('understanding')){
                 Identifiers[x] = Identifiers[x] + "|belief";
             }
             if(MessageSplit[x].includes('cause') || MessageSplit[x].includes('explanation') || MessageSplit[x].includes('element') || MessageSplit[x].includes('matter') || MessageSplit[x].includes('motivation') || MessageSplit[x].includes('motive') || MessageSplit[x].includes('origin') || MessageSplit[x].includes('principle') || MessageSplit[x].includes('purpose') || MessageSplit[x].includes('root') || MessageSplit[x].includes('source') || MessageSplit[x].includes('author') || MessageSplit[x].includes('grounds') || MessageSplit[x].includes('foundation') || MessageSplit[x].includes('maker') || MessageSplit[x].includes('producer') || MessageSplit[x].includes('doer')){
@@ -119,7 +128,7 @@ function sayThis() {
             if(MessageSplit[x].includes('development') || MessageSplit[x].includes('advancement') || MessageSplit[x].includes('evolution') || MessageSplit[x].includes('expansion') || MessageSplit[x].includes('improvement') || MessageSplit[x].includes('increase') || MessageSplit[x].includes('progress') || MessageSplit[x].includes('addition')|| MessageSplit[x].includes('buildup')){
                 Identifiers[x] = Identifiers[x] + "|development";
             }
-            if(MessageSplit[x].includes('different') || MessageSplit[x].includes('contrasting') || MessageSplit[x].includes('disparate') || MessageSplit[x].includes('divergent') || MessageSplit[x].includes('diverse') || MessageSplit[x].includes('offbeat') || MessageSplit[x].includes('peculiar') || MessageSplit[x].includes('various')|| MessageSplit[x].includes('particular'))){
+            if(MessageSplit[x].includes('different') || MessageSplit[x].includes('contrasting') || MessageSplit[x].includes('disparate') || MessageSplit[x].includes('divergent') || MessageSplit[x].includes('diverse') || MessageSplit[x].includes('offbeat') || MessageSplit[x].includes('peculiar') || MessageSplit[x].includes('various')|| MessageSplit[x].includes('particular')){
                 Identifiers[x] = Identifiers[x] + "|different";
             }
             if(MessageSplit[x].includes('desire') || MessageSplit[x].includes('ambition') || MessageSplit[x].includes('appetite') || MessageSplit[x].includes('aspiration') || MessageSplit[x].includes('craving') || MessageSplit[x].includes('greed') || MessageSplit[x].includes('hunger') || MessageSplit[x].includes('inclination')|| MessageSplit[x].includes('motive') || MessageSplit[x].includes('need') || MessageSplit[x].includes('thirst') || MessageSplit[x].includes('wish') || MessageSplit[x].includes('yearning') || MessageSplit[x].includes('want')){
@@ -132,7 +141,7 @@ function sayThis() {
 
         //Check if understandable
         if(!analysedMessage){
-            Response = "I'm sorry, I don't understand.";
+            Response = Identifiers;
             analysedMessage = true;
         }
 

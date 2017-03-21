@@ -7,14 +7,14 @@ function sayThis() {
     //Check if message is valid
     if(Message != ""){
 
-        //Add Message to table 
+        //Add Message to table
         document.getElementById("logTable").innerHTML = document.getElementById("logTable").innerHTML + "<tr><td><b>You:</b></td><td>"+ Message +"</td><tr>";
         document.getElementById("messageBox").value = "";
         log.scrollTop = log.scrollHeight;
 
         //Analyze Message
         var analysedMessage;
-    
+
         if(Message.includes("hello") || Message.includes("hi")|| Message.includes("greetings")){
             Response = "Well hey there!";
             analysedMessage = true;
